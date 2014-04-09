@@ -70,7 +70,6 @@ Cache::config('default', array('engine' => 'File'));
  * CakePlugin::loadAll(); */ // Loads all plugins at once
 CakePlugin::load('DebugKit'); //Loads a single plugin named DebugKit
 CakePlugin::load('Phpunit'); 
-CakePlugin::load('Media', array('bootstrap'=>true));
 
 
 /**
