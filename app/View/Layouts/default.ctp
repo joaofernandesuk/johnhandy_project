@@ -77,7 +77,7 @@ $cakeVersion = __d('cake_dev', 'John Handy 2013/2014 ® - All Rights Reserved')
 									<i aria-hidden="true" class="icon-portfolio"></i>
 								</span>
 								<span>Portfolio</span>',
-							 '/portfolio_categories/#menu', array('escape' => false, 'class' => 'stay_in_menu')); 
+							 '/galleries/#menu', array('escape' => false, 'class' => 'stay_in_menu')); 
 						?> 
 						</li>
 						<li>
