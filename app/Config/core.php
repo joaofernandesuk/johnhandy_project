@@ -378,10 +378,7 @@ Cache::config('_cake_core_', array(
  * Configure the cache for model and datasource caches. This cache configuration
  * is used to store schema descriptions, and table listings in connections.
  */
-Cache::config('_cake_model_', array(
-	'engine' => $engine,
-	'prefix' => $prefix . 'cake_model_',
-	'path' => CACHE . 'models' . DS,
-	'serialize' => ($engine === 'File'),
-	'duration' => $duration
-));
+Cache::config('binary', array('engine' => 'File',  
+                                'prefix' => 'binary_',  
+                                'serialize' => false) 
+                         ); 
