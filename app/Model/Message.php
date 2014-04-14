@@ -8,6 +8,14 @@ class Message extends AppModel {
                 'Video.model' => 'Message',
             ),
         ),
+
+        'Photo' => array(
+            'className' => 'Gallery',
+            'foreignKey' => 'foreign_key',
+            'conditions' => array(
+                'Photo.model' => 'Message',
+            ),
+        ),
     );
 }
 ?>

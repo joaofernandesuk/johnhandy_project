@@ -1,36 +1,25 @@
 <div class="gallery">
 <div class="container">
 
-    <div class="actions">
-        <h3><?php __('Actions'); ?></h3>
-        <ul>
-            <li><?php echo $this->Html->link(__('List Galleries', true), array('action' => 'index'));?></li>
-            <li><?php echo $this->Html->link(__('Add Gallery', true), array('controller' => 'galleries', 'action' => 'add')); ?></li>
-            <li><?php echo $this->Html->link(__('List Photos', true), array('controller' => 'photos', 'action' => 'index')); ?> </li>
-            <li><?php echo $this->Html->link(__('New Photo', true), array('controller' => 'photos', 'action' => 'add')); ?> </li>
-        </ul>
-    </div>
+<div class="actions">
+	<h3><?php __('Actions'); ?></h3>
+	<ul>
+		<li><?php echo $this->Html->link(__('New Photo', true), array('action' => 'add')); ?></li>
+		<li><?php echo $this->Html->link(__('List Galleries', true), array('controller' => 'galleries', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Gallery', true), array('controller' => 'galleries', 'action' => 'add')); ?> </li>
+	</ul>
+</div>
 
     <div class="cont">
-		<h1><?php echo h($gallery['Gallery']['title']); ?></h1>
-
-		<p><small>Created: <?php echo $gallery['Gallery']['created']; ?></small></br>
-		<small>Modified: <?php echo $gallery['Gallery']['modified']; ?></small></p>
-
-		<p><?php echo __('Content:');?></br>
-		<?php echo h($gallery['Gallery']['body']); ?>
-
-
-
-
-
-
+		<legend><h1><?php echo __('Photos'); ?></h1></legend>
 		<table cellpadding="0" cellspacing="0">
 			<tr>
 				<th><?php echo $this->Paginator->sort('id');?></th>
+				<th><?php echo $this->Paginator->sort('gallery_id');?></th>
 				<th><?php echo $this->Paginator->sort('name');?></th>
 				<th><?php echo $this->Paginator->sort('img_file');?></th>
-				<th><?php echo __('Actions');?></th>
+				<th><?php echo __('Actions'); ?></th>
+				<th><?php __('Actions');?></th>
 			</tr>
 			<?php
 			
@@ -42,7 +31,7 @@
 				}
 				
 				//****************************************** SHOW IMAGES FROM A SINGLE GALLERY *********************************************//
-				if ($photo['Photo']['gallery_id'] !== $gallery['Gallery']['id']) {
+				if ($photo['Gallery']['id'] == 0) {
 					$class = ' style="display: none;"';
 				}
 				
@@ -50,6 +39,9 @@
 			<tr<?php echo $class;?>>
 				<td>
 					<?php echo $photo['Photo']['id']; ?>
+				</td>
+				<td>
+					<?php echo $this->Html->link($photo['Gallery']['title'], array('controller' => 'galleries', 'action' => 'view', $photo['Gallery']['id'])); ?>
 				</td>
 				<td>
 					<?php echo $photo['Photo']['name']; ?>
@@ -61,7 +53,7 @@
 				</td>
 				
 				<td>
-					<?php echo $this->Html->link(__('View', true), array('action' => '../photos/view', $photo['Photo']['id'])); ?> |
+					<?php echo $this->Html->link(__('View', true), array('action' => 'view', $photo['Photo']['id'])); ?> |
 					<?php echo $this->Html->link(__('Edit', true), array('action' => 'edit', $photo['Photo']['id'])); ?> |
 					<?php echo $this->Html->link(__('Delete', true), array('action' => 'delete', $photo['Photo']['id']), null, sprintf(__('Are you sure you want to delete photo %s?', $photo['Photo']['img_file']))); ?>
 				</td>

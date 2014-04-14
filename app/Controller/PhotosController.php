@@ -1,11 +1,11 @@
 <?php
-class ImagesController extends AppController {
+class PhotosController extends AppController {
 
-    var $name = 'Images';
+    var $name = 'Photos';
 
     function index() {
-        $this->Image->recursive = 0;
-        $this->set('images', $this->paginate());
+        $this->Photo->recursive = 0;
+        $this->set('photos', $this->paginate());
     }
 
     function view($id = null) {
@@ -13,20 +13,20 @@ class ImagesController extends AppController {
             $this->Session->setFlash(__('Invalid image', true));
             $this->redirect(array('action' => 'index'));
         }
-        $this->set('image', $this->Image->read(null, $id));
+        $this->set('photo', $this->Photo->read(null, $id));
     }
 
     function add() {
         if (!empty($this->data)) {
-            $this->Image->create();
-            if ($this->Image->save($this->data)) {
+            $this->Photo->create();
+            if ($this->Photo->save($this->data)) {
                 $this->Session->setFlash(__('The image has been saved', true));
                 $this->redirect(array('action' => 'index'));
             } else {
                 $this->Session->setFlash(__('The image could not be saved. Please, try again.', true));
             }
         }
-        $galleries = $this->Image->Gallery->find('list');
+        $galleries = $this->Photo->Gallery->find('list');
         $this->set(compact('galleries'));
     }
 
@@ -36,7 +36,7 @@ class ImagesController extends AppController {
             $this->redirect(array('action' => 'index'));
         }
         if (!empty($this->data)) {
-            if ($this->Image->save($this->data)) {
+            if ($this->Photo->save($this->data)) {
                 $this->Session->setFlash(__('The image has been saved', true));
                 $this->redirect(array('action' => 'index'));
             } else {
@@ -44,9 +44,9 @@ class ImagesController extends AppController {
             }
         }
         if (empty($this->data)) {
-            $this->data = $this->Image->read(null, $id);
+            $this->data = $this->Photo->read(null, $id);
         }
-        $galleries = $this->Image->Gallery->find('list');
+        $galleries = $this->Photo->Gallery->find('list');
         $this->set(compact('galleries'));
     }
 
@@ -55,7 +55,7 @@ class ImagesController extends AppController {
             $this->Session->setFlash(__('Invalid id for image', true));
             $this->redirect(array('action'=>'index'));
         }
-        if ($this->Image->delete($id)) {
+        if ($this->Photo->delete($id)) {
             $this->Session->setFlash(__('Image deleted', true));
             $this->redirect(array('action'=>'index'));
         }

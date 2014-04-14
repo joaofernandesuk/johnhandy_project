@@ -18,6 +18,10 @@ class GalleriesController extends AppController {
             throw new NotFoundException(__('Invalid Gallery'));
         }
         $this->set('gallery', $gallery);
+
+        $this->set('photos', $this->paginate());
+        $photos = $this->Gallery->Photo->find('all');
+        $this->set(compact('photos'));
     }
 
     public function add() {
@@ -31,6 +35,17 @@ class GalleriesController extends AppController {
             $this->Session->setFlash(__('Unable to add your Gallery.'));
         }
     }
+
+   /* public function add() {
+        if ($this->request->is('post')) {
+            try {
+                $this->Gallery->createWithAttachments($this->request->data);
+                $this->Session->setFlash(__('The message has been saved'));
+            } catch (Exception $e) {
+                $this->Session->setFlash($e->getMessage());
+            }
+        }
+    } */
 
     public function edit($id = null) {
         if (!$id) {

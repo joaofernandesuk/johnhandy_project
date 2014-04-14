@@ -422,17 +422,22 @@ body {
 ================================================== */
 div.form,
 div.index,
-div.view {
+div.view,
+div.cont {
 	float:right;
 	width:76%;
-	border-left:1px solid #666;
 	padding:10px 2%;
 	z-index: 99999;
+	background: transparent;
 }
 div.actions {
+	position: absolute;
 	float:left;
 	width:16%;
-	padding:10px 1.5%;
+	display: inline-block;
+	height: 100%;
+	background: transparent;
+	border-right:2px solid #666;
 
 }
 div.actions h3 {
@@ -440,6 +445,7 @@ div.actions h3 {
 	color:#777;
 }
 
+.view_photo {width: 100%;}
 
 /** Tables
 ================================================== */
@@ -473,6 +479,7 @@ table tr td {
 	vertical-align: top;
 	border-bottom:1px solid #ddd;
 }
+table tr {background: #FFF}
 table tr:nth-child(even) {
 	background: #f9f9f9;
 }
@@ -484,6 +491,7 @@ table td.actions a {
 	margin: 0px 6px;
 	padding:2px 5px;
 }
+.altrow{}
 
 /** Paging **/
 .paging {

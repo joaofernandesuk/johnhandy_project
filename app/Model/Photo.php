@@ -1,17 +1,27 @@
 <?php
-class Image extends AppModel {
-  /*  public $actsAs = array(
+class Photo extends AppModel {
+
+
+    /////////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////     CHANGE / FIX     ////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////
+    public $actsAs = array(
         'Upload.Upload' => array(
-            'gallery' => array(
-                'thumbnailSizes' => array('thumbnailMethod' => 'php',
+            'img_file' => array(
+                'thumbnailSizes' => array(
                     'xvga' => '1024x768',
                     'vga' => '640x480',
                     'thumb' => '80x80',
                 ),
+                'fields' => array(
+                    'dir' => 'img_dir'
+                )
             ),
         ),
     );
-
+/*
     public $belongsTo = array(
         'Gallery' => array(
             'className' => 'Gallery',
@@ -68,12 +78,12 @@ class Image extends AppModel {
             'order' => ''
         )
     );
-    
+ /*   
 var $actsAs = array(
-    'Upload.FileGrabber' => array(
+    'Upload.Upload' => array(
         'img_file' => array(
-            'dir' => 'img{DS}uploads{DS}images',
-            'create_directory' => false,
+            'dir' => 'img{DS}img_file{DS}images',
+            'create_directory' => true,
             'allowed_mime' => array('image/jpeg', 'image/pjpeg', 'image/png'),
             'allowed_ext' => array('.jpg', '.jpeg', '.png'),
             'zoomCrop' => true,
@@ -85,6 +95,6 @@ var $actsAs = array(
           
         )
     )
-);
+);*/
 }
 ?>
