@@ -5,6 +5,10 @@ class PhotosController extends AppController {
 
     function index() {
         $this->Photo->recursive = 0;
+        $this->paginate = array(
+            'limit' => 6,
+            'order' => array('Photo.gallery_id' => 'asc' )
+        );
         $this->set('photos', $this->paginate());
     }
 

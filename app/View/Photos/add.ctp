@@ -8,6 +8,17 @@
 		<li><?php echo $this->Html->link(__('List Galleries', true), array('controller' => 'galleries', 'action' => 'index'));?></li>
 		<li><?php echo $this->Html->link(__('List Photos', true), array('controller' => 'photos', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Gallery', true), array('controller' => 'galleries', 'action' => 'add')); ?> </li>
+		<li>
+                <?php 
+                if($this->Session->check('Auth.User')){
+                echo $this->Html->link( "Return to Dashboard",   array('controller' => 'users', 'action'=>'index') ); 
+                echo "<br>";
+                echo $this->Html->link( "Logout",   array('controller' => 'users', 'action'=>'logout') ); 
+                }else{
+                echo $this->Html->link( "Return to Login Screen",   array('controller' => 'users', 'action'=>'login') ); 
+                }
+                ?>
+            </li>
 	</ul>
 </div>
 

@@ -6,6 +6,11 @@ class GalleriesController extends AppController {
 
     public function index() {
         $this->set('galleries', $this->Gallery->find('all'));
+        $this->paginate = array(
+            'limit' => 6,
+            'order' => array('Gallery.title' => 'asc' )
+        );
+        $this->set('galleries', $this->paginate());
     }
 
     public function view($id) {
@@ -18,6 +23,11 @@ class GalleriesController extends AppController {
             throw new NotFoundException(__('Invalid Gallery'));
         }
         $this->set('gallery', $gallery);
+
+        /*$this->paginate = array(
+            'limit' => 6,
+            'order' => array('Gallery.title' => 'asc' )
+        );*/
 
         $this->set('photos', $this->paginate());
         $photos = $this->Gallery->Photo->find('all');
@@ -83,6 +93,43 @@ class GalleriesController extends AppController {
             return $this->redirect(array('action' => 'index'));
         }
     }
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////// FOR CUSTOMERS //////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+    public function customer_index() {
+        $this->set('galleries', $this->Gallery->find('all'));
+        $this->paginate = array(
+            'limit' => 9,
+            'order' => array('Gallery.created' => 'desc' )
+        );
+
+        $this->set('photos', $this->paginate());
+        $this->set('galleries', $this->paginate());
+        $photos = $this->Gallery->Photo->find('all');
+        $this->set(compact('photos'));
+    }
+
+    public function customer_view($id) {
+        if (!$id) {
+            throw new NotFoundException(__('Invalid Gallery'));
+        }
+
+        $gallery = $this->Gallery->findById($id);
+        if (!$gallery) {
+            throw new NotFoundException(__('Invalid Gallery'));
+        }
+        $this->set('gallery', $gallery);
+
+        $this->set('photos', $this->paginate());
+        $photos = $this->Gallery->Photo->find('all');
+        $this->set(compact('photos'));
+    }
+
 
 }
 ?>

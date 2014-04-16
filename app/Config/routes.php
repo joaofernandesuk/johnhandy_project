@@ -36,6 +36,10 @@
 	Router::connect('/admin/logout', array('controller' => 'users', 'action' => 'logout'));
 	Router::connect('/admin/add', array('controller' => 'users', 'action' => 'add'));
 
+	Router::connect('/services', array('controller' => 'pages', 'action' => 'services'));
+	Router::connect('/portfolio', array('controller' => 'galleries', 'action' => 'customer_index'));
+	Router::connect('/portfolio/gallery/*', array('controller' => 'galleries', 'action' => 'customer_view'));
+
 /**
  * Load all plugin routes. See the CakePlugin documentation on
  * how to customize the loading of plugin routes.

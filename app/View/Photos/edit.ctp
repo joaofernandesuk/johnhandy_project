@@ -8,7 +8,19 @@
 			<li><?php echo $this->Html->link(__('Delete', true), array('action' => 'delete', $this->Form->value('Photo.id')), null, sprintf(__('Are you sure you want to delete # %s?', true), $this->Form->value('Photo.id'))); ?></li>
 			<li><?php echo $this->Html->link(__('List Photos', true), array('action' => 'index'));?></li>
 			<li><?php echo $this->Html->link(__('List Galleries', true), array('controller' => 'galleries', 'action' => 'index')); ?> </li>
-			<li><?php echo $this->Html->link(__('New Gallery', true), array('controller' => 'galleries', 'action' => 'add')); ?> </li>
+			<li><?php echo $this->Html->link(__('New Gallery', true), array('controller' => 'galleries', 'action' => 'add')); ?> 
+			</li>
+			<li>
+                <?php 
+                if($this->Session->check('Auth.User')){
+                echo $this->Html->link( "Return to Dashboard",   array('controller' => 'users', 'action'=>'index') ); 
+                echo "<br>";
+                echo $this->Html->link( "Logout",   array('controller' => 'users', 'action'=>'logout') ); 
+                }else{
+                echo $this->Html->link( "Return to Login Screen",   array('controller' => 'users', 'action'=>'login') ); 
+                }
+                ?>
+            </li>
 		</ul>
 	</div>
 
@@ -21,6 +33,7 @@
 				echo $this->Form->input('gallery_id');
 				echo $this->Form->input('name');
 				echo $this->Form->input('img_file');
+				/* echo $this->Form->input('img_file', array('type' => 'file')); */
 				
 				
 				echo $this->Form->input('Photo.img_file.remove',  array('type' => 'checkbox', 'label' => 'Delete Photo'));

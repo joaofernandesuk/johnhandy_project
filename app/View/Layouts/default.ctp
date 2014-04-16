@@ -32,13 +32,17 @@ $cakeVersion = __d('cake_dev', 'John Handy 2013/2014 ® - All Rights Reserved')
 		echo $this->Html->meta('icon');
 
 		/*echo $this->Html->css('cake.generic');*/
-		echo $this->Html->css(array('base', 'layout', 'skeleton', 'owl.carousel', 'owl.theme', 'owl.transitions','menu_component'));
+		echo $this->Html->css(array('base', 'layout', 'skeleton', 'owl.carousel', 'owl.theme', 'owl.transitions','menu_component', 'flexslider'));
 
 		echo $this->Html->script('jquery');
 		echo $this->Html->script('intro');
 		echo $this->Html->script('owl.carousel');
 		echo $this->Html->script('owl.carousel.min');
 		echo $this->Html->script('menu');
+
+		echo $this->Html->script('gallery_carousel/jquery.flexslider.js');
+
+		echo $this->Html->script('gallery_carousel.js');
 
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
@@ -68,7 +72,7 @@ $cakeVersion = __d('cake_dev', 'John Handy 2013/2014 ® - All Rights Reserved')
 									<i aria-hidden="true" class="icon-services"></i>
 								</span>
 								<span>Services</span>',
-							 '/pages/services/#menu', array('escape' => false, 'class' => 'stay_in_menu')); 
+							 '/services/#menu', array('escape' => false, 'class' => 'stay_in_menu')); 
 						?> 
 						</li>
 						<li>
@@ -77,7 +81,7 @@ $cakeVersion = __d('cake_dev', 'John Handy 2013/2014 ® - All Rights Reserved')
 									<i aria-hidden="true" class="icon-portfolio"></i>
 								</span>
 								<span>Portfolio</span>',
-							 '/galleries/#menu', array('escape' => false, 'class' => 'stay_in_menu')); 
+							 '/portfolio/#menu', array('escape' => false, 'class' => 'stay_in_menu')); 
 						?> 
 						</li>
 						<li>

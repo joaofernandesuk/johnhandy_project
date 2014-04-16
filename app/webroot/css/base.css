@@ -145,10 +145,6 @@ body {
     animation: search 5s linear 0s infinite;
  }
 
- .gallery {padding-top: 20px; background: #FFF; width: 100%; height: 100%;}
-
- .users {padding-top: 20px; background: #FFF; width: 100%; height: 100%;}
-
  #header {position: relative;background: transparent;}
 
 .scroll_to_menu_div {width: 100%; margin: -30% auto 15%; text-align: center;cursor:pointer;}
@@ -275,6 +271,8 @@ body {
     	width: 100%;
     	height: auto;
 	}
+
+	.view_photo {width: 100%;}
 
 /* #Buttons
 ================================================== */
@@ -430,6 +428,12 @@ div.cont {
 	z-index: 99999;
 	background: transparent;
 }
+
+ .gallery {padding: 20px 0; background: #FFF; width: 100%; height: 100%;}
+
+ .users {padding-top: 20px; background: #FFF; width: 100%; height: 100%;}
+
+
 div.actions {
 	position: absolute;
 	float:left;
@@ -444,8 +448,6 @@ div.actions h3 {
 	padding-top:0;
 	color:#777;
 }
-
-.view_photo {width: 100%;}
 
 /** Tables
 ================================================== */
@@ -491,7 +493,7 @@ table td.actions a {
 	margin: 0px 6px;
 	padding:2px 5px;
 }
-.altrow{}
+.altrow, .zebra{background: #e0e0e0;}
 
 /** Paging **/
 .paging {
@@ -541,5 +543,151 @@ table td.actions a {
 .paging .current {
 	background: #efefef;
 	color: #c73e14;
+}
+
+/** Portfolio
+================================================== */
+
+
+.clearfix2:before, .clearfix2:after { content: " "; display: table; }
+.clearfix2:after { clear: both; }
+
+.coluna-wrap {
+	clear: both;
+	padding: 0;
+	background: transparent;
+	width: 33%;
+	display: inline-block;
+	-webkit-transition: all .50s ease-in-out;
+	-moz-transition: all .50s ease-in-out;
+	-ms-transition: all .50s ease-in-out;
+	-o-transition: all .50s ease-in-out;
+	transition: all .50s ease-in-out;
+}
+.coluna {
+	float: left;
+	width: 100%;
+	position: relative;
+	background: transparent;
+	overflow: hidden;
+	padding: 0px;
+}
+
+
+.coluna:nth-child(2) {
+	width: 60%;
+	box-shadow: -1px 0 0 rgba(0,0,0,0.1);
+}
+
+.coluna p {
+	font-weight: 300;
+	font-size: 2em;
+	padding: 0;
+	margin: 0;
+	text-align: right;
+	line-height: 1.5;
+} 
+
+/* Slide in on hover (animate transforms) */
+.captura_border {
+
+	border: solid 5px rgba(22, 145, 190,1); overflow:hidden;
+}
+
+img.captura {
+	-webkit-transition: opacity 0.3s ease-in-out;
+	-moz-transition: opacity 0.3s ease-in-out;
+	transition: opacity 0.3s ease-in-out;
+	width: 95%;
+}
+
+.captura {opacity: 0.6; }
+
+img.captura::after,
+img.captura::before {
+	position: absolute;
+	width: 100%;
+	height: 50%;
+	color: #fff;
+	z-index: 1;
+	-webkit-transition: -webkit-transform 0.3s ease-in-out; 
+	-moz-transition: -moz-transform 0.3s ease-in-out; 
+	transition: transform 0.3s ease-in-out; 
+	-webkit-box-sizing: border-box; 
+	-moz-box-sizing: border-box; 
+	box-sizing: border-box;
+}
+
+img.captura::after {
+	content: attr(data-title);
+	top: 0;
+	background: #0083ab;
+	font-size: 40px;
+	font-weight: 300;
+	padding: 30px;
+	-webkit-transform: translateY(-100%);
+	-moz-transform: translateY(-100%);
+	transform: translateY(-100%);
+}
+
+img.captura::before {
+	content: '...' attr(data-description) '...';
+	top: 50%;
+	background: #f27545;
+	font-size: 14px;
+	padding: 20px;
+	-webkit-transform: translateY(100%);
+	-moz-transform: translateY(100%);
+	transform: translateY(100%);
+}
+
+img.captura:hover::after,
+img.captura:hover::before {
+	-webkit-transform: translateY(0%);
+	-moz-transform: translateY(0%);
+	transform: translateY(0%);
+}
+
+.portfolio_title {
+	background: rgb(22, 145, 190); 
+	height: 50%;
+	position: absolute;
+	margin-top: 50%; 
+	width: 70%; 
+	text-align: 
+	left; 
+	color: #FFF; 
+	font-weight: bold; 
+	font-size: 18px; 
+	padding: 5% 2%; 
+	z-index: 1; 
+	cursor: pointer;
+	-webkit-transition: all .20s ease-in-out;
+	-moz-transition: all .20s ease-in-out;
+	-ms-transition: all .20s ease-in-out;
+	-o-transition: all .20s ease-in-out;
+	transition: all .20s ease-in-out;
+}
+
+.coluna-wrap:hover .portfolio_title{opacity: 0.7; margin-left: -50px;}
+
+.coluna-wrap:hover .captura{opacity: 1}
+
+@media only screen and (min-width: 800px) and (max-width: 1085px) {
+
+.coluna-wrap {width: 33%;}
+
+}
+
+@media only screen and (min-width: 530px) and (max-width: 800px) {
+
+.coluna-wrap {width: 49.6%;}
+
+}
+
+@media only screen and (max-width: 530px) {
+
+.coluna-wrap {width: 100%;}
+
 }
 
