@@ -37,8 +37,15 @@
 	Router::connect('/admin/add', array('controller' => 'users', 'action' => 'add'));
 
 	Router::connect('/services', array('controller' => 'pages', 'action' => 'services'));
+	Router::connect('/aboutus', array('controller' => 'pages', 'action' => 'aboutus'));
+	Router::connect('/contacts', array('controller' => 'pages', 'action' => 'contacts'));
 	Router::connect('/portfolio', array('controller' => 'galleries', 'action' => 'customer_index'));
 	Router::connect('/portfolio/gallery/*', array('controller' => 'galleries', 'action' => 'customer_view'));
+	Router::connect('/feedback', array('controller' => 'feedbacks', 'action' => 'customer_index'));
+	Router::connect('/feedback/add', array('controller' => 'feedbacks', 'action' => 'customer_add'));
+	Router::connect('/feedback/view', array('controller' => 'feedbacks', 'action' => 'customer_view'));
+
+	Router::connect('/img/captcha.jpg', array('controller' => 'feedbacks', 'action' => 'captcha'));
 
 /**
  * Load all plugin routes. See the CakePlugin documentation on

@@ -90,7 +90,7 @@ $cakeVersion = __d('cake_dev', 'John Handy 2013/2014 ® - All Rights Reserved')
 									<i aria-hidden="true" class="icon-team"></i>
 								</span>
 								<span>About Us</span>',
-							 '/pages/aboutus/#menu', array('escape' => false, 'class' => 'stay_in_menu')); 
+							 '/aboutus/#menu', array('escape' => false, 'class' => 'stay_in_menu')); 
 						?> 
 						</li>
 						<li>
@@ -99,7 +99,7 @@ $cakeVersion = __d('cake_dev', 'John Handy 2013/2014 ® - All Rights Reserved')
 									<i aria-hidden="true" class="icon-contact"></i>
 								</span>
 								<span>Contacts</span>',
-							 '/pages/contactus/#menu', array('escape' => false, 'class' => 'stay_in_menu')); 
+							 '/contacts/#menu', array('escape' => false, 'class' => 'stay_in_menu')); 
 						?> 
 						</li>
 						<li>
@@ -107,8 +107,8 @@ $cakeVersion = __d('cake_dev', 'John Handy 2013/2014 ® - All Rights Reserved')
 							<span class="icon"> 
 									<i aria-hidden="true" class="icon-blog"></i>
 								</span>
-								<span>Blog</span>',
-							 '/blog/#menu', array('escape' => false, 'class' => 'stay_in_menu')); 
+								<span>Feedback</span>',
+							 '/feedback/add#menu', array('escape' => false, 'class' => 'stay_in_menu')); 
 						?> 
 						</li>
 					</ul>
@@ -157,12 +157,12 @@ $cakeVersion = __d('cake_dev', 'John Handy 2013/2014 ® - All Rights Reserved')
 		<div id="footer">
 			<div id="footer_first_section">
 				<div class="footer_title">Site Map:</div>
-				<div class="footer_text">Home</div>
-				<div class="footer_text">Services</div>
-				<div class="footer_text">Portfolio</div>
+				<div class="footer_text footer_text_first">Home</div>
+				<div class="footer_text">Check Our Services</div>
+				<div class="footer_text">Look Our Portfolio</div>
 				<div class="footer_text">About Us</div>
-				<div class="footer_text">Contacts</div>
-				<div class="footer_text">Blog</div>
+				<div class="footer_text">Contacts Us</div>
+				<div class="footer_text">Give Us Feedback</div>
 			</div>
 			<div id="footer_second_section">
 				<div class="footer_title">Follow Us:</div>

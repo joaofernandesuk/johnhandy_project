@@ -144,6 +144,19 @@ body {
     -webkit-animation: search 5s linear 0s infinite;
     animation: search 5s linear 0s infinite;
  }
+  #contacts {
+ 	padding-top: 20px;
+ 	width: 100%;
+ 	height: 100%;
+ 	background:#FFF url(../img/diamonds_background.png) 0% 0% repeat;
+ 	background-attachment:fixed; 
+ 	background-size:10%;
+ }
+.email_content {width: 50%; position: relative; display: inline-block; float: left;}
+.telefone_content { width: 40%; height: 100px; float: right;}
+.map_location { width: 40%; height: 300px; float: right;}
+.icons {position: relative; display: inline-block; width: 50px; height: 50px;}
+.icons_text {position: relative; display: inline-block; margin-bottom: 10px; margin-left: 10px;}
 
  #header {position: relative;background: transparent;}
 
@@ -191,23 +204,24 @@ body {
  #content {background: transparent;}
 
  #footer {position:relative; background: transparent; /*background: #009b37*/ bottom:0%; margin-top: 20px; border-top: solid 0px #00772a; text-align: center;}
- #footer_first_section, #footer_second_section {display:inline-block; float:left; width:50%; height:200px;}
- .footer_title {float: left; width: 100%; text-align: center; color: #FFF; font-size: 16px; margin-top: 20px; margin-bottom: 20px; font-weight: bold;}
- .footer_text {margin: 0 auto; font-size: 14px; text-align: left; width: 80px; color: #FFF;}
- .footer_text:before{content:'» ';white-space:nowrap}
+ #footer_first_section, #footer_second_section {display:inline-block; float:left; width:100%;}
+ .footer_title {float: left; width: 100%; text-align: center; color: #FFF; font-size: 16px; margin-top: 20px; margin-bottom: 20px; font-weight: bold; display: inline-block;}
+ .footer_text {margin: 0 auto; font-size: 14px; text-align: left;  color: #FFF; display: inline-block;}
+ .footer_text:after{content:' |';white-space:nowrap}
+ .footer_text_first:before{content:'| ';white-space:nowrap}
 
 /* #Typography
 ================================================== */
 	h1, h2, h3, h4, h5, h6 {
 		color: #181818;
-		font-family: "Georgia", "Times New Roman", serif;
+		font: 13px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
 		font-weight: normal; }
 	h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { font-weight: inherit; }
 	h1 { font-size: 46px; line-height: 50px; margin-bottom: 14px;}
 	h2 { font-size: 35px; line-height: 40px; margin-bottom: 10px; }
 	h3 { font-size: 28px; line-height: 34px; margin-bottom: 8px; }
 	h4 { font-size: 21px; line-height: 30px; margin-bottom: 4px; }
-	h5 { font-size: 17px; line-height: 24px; }
+	h5 { font-size: 17px; line-height: 24px; text-align: justify;}
 	h6 { font-size: 14px; line-height: 21px; }
 	.subheader { color: #777; }
 
@@ -366,7 +380,6 @@ body {
 	input[type="text"],
 	input[type="password"],
 	input[type="email"],
-	textarea,
 	select {
 		border: 1px solid #ccc;
 		padding: 6px 4px;
@@ -377,11 +390,24 @@ body {
 		font: 13px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
 		color: #777;
 		margin: 0;
-		width: 210px;
-		max-width: 100%;
+		width: 50%;
 		display: block;
 		margin-bottom: 20px;
 		background: #fff; }
+	textarea {
+		border: 1px solid #ccc;
+		padding: 6px 4px;
+		outline: none;
+		-moz-border-radius: 2px;
+		-webkit-border-radius: 2px;
+		border-radius: 2px;
+		font: 13px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		color: #777;
+		margin: 0;
+		display: block;
+		margin-bottom: 20px;
+		background: #fff; }
+	}
 	select {
 		padding: 0; }
 	input[type="text"]:focus,
@@ -394,7 +420,7 @@ body {
 		-webkit-box-shadow: 0 0 3px rgba(0,0,0,.2);
 		box-shadow:  0 0 3px rgba(0,0,0,.2); }
 	textarea {
-		min-height: 60px; }
+		min-height: 60px; width: 98%; max-height: 300px; height: 200px; max-width: 600px;}
 	label,
 	legend {
 		display: block;
@@ -426,6 +452,7 @@ div.cont {
 	width:76%;
 	padding:10px 2%;
 	z-index: 99999;
+	overflow: hidden;
 	background: transparent;
 }
 
@@ -672,6 +699,27 @@ img.captura:hover::before {
 .coluna-wrap:hover .portfolio_title{opacity: 0.7; margin-left: -50px;}
 
 .coluna-wrap:hover .captura{opacity: 1}
+
+
+/** Feedback
+================================================== */
+
+.feedback_div {
+	width: 60%; 
+	margin-bottom: 20px; 
+	background:url(../img/ballon_background.png) 30% 50% no-repeat;
+	background-size: 80%;
+	float: right;
+	padding: 15%;
+}
+
+.feedback_div:nth-child(odd) {
+	float: left; 
+	background:url(../img/ballon_background2.png) 30% 50% no-repeat;
+	background-size: 80%;
+}
+
+
 
 @media only screen and (min-width: 800px) and (max-width: 1085px) {
 

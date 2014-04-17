@@ -4,12 +4,13 @@
 	<div class="actions">
 		<h3><?php __('Actions'); ?></h3>
 		<ul>
-
+			<li><?php echo $this->Html->link(__('Delete', true), array('action' => 'delete', $this->Form->value('Feedback.id')), null, sprintf(__('Are you sure you want to delete this Feedback?'))); ?></li>
+			<li><?php echo $this->Html->link(__('List Feedbacks', true), array('controller' => 'feedbacks', 'action' => 'index'));?></li>
+			<li><?php echo $this->Html->link(__('New Feedback', true), array('controller' => 'feedbacks', 'action' => 'add')); ?></li>
 			<li><?php echo $this->Html->link(__('List Galleries', true), array('controller' => 'galleries', 'action' => 'index'));?></li>
+			<li><?php echo $this->Html->link(__('New Gallery', true), array('controller' => 'galleries', 'action' => 'add')); ?></li>
 			<li><?php echo $this->Html->link(__('List Photos', true), array('controller' => 'photos', 'action' => 'index')); ?> </li>
 			<li><?php echo $this->Html->link(__('New Photo', true), array('controller' => 'photos', 'action' => 'add')); ?> 
-			<li><?php echo $this->Html->link(__('List Feedbacks', true), array('controller' => 'feedbacks', 'action' => 'index'));?></li>
-            <li><?php echo $this->Html->link(__('New Feedback', true), array('controller' => 'feedbacks', 'action' => 'add')); ?></li>
 			</li>
 			<li>
                 <?php 
@@ -25,22 +26,16 @@
 		</ul>
 	</div>
 	<div class="cont">
-		<legend><h1><?php echo __('Add Gallery'); ?></h1></legend>
+		<h1>Edit Feedback</h1>
 		<?php
-		echo $this->Form->create('Gallery', array('type' => 'file'));?>
-		<fieldset>
-
-		<?php 
+		echo $this->Form->create('Feedback');
+		echo $this->Form->input('name');
+		echo $this->Form->input('email');
 		echo $this->Form->input('title');
 		echo $this->Form->input('body', array('rows' => '3'));
-		/* echo $this->Form->input('Photo.0.attachment', array('type' => 'file', 'label' => 'Photo'));
-		echo $this->Form->input('Photo.0.gallery_id', array('type' => 'file', 'value' => 'Gallery')); */
-		echo $this->Form->submit('Add Gallery', array('class' => 'form-submit',  'title' => 'Click here to add the Gallery') ); 
-
+		echo $this->Form->input('id', array('type' => 'hidden'));
+		echo $this->Form->end('Save Feedback');
 		?>
-
-		</fieldset>
-		<?php echo $this->Form->end(); ?>
 	</div>
 
 </div>

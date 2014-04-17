@@ -1,4 +1,6 @@
 <?php
+App::uses('AppController', 'Controller');
+
 class GalleriesController extends AppController {
     
     public $helpers = array('Html', 'Form', 'Session');

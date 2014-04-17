@@ -1,11 +1,11 @@
 <div class="gallery">
 <div class="container">
-<div class="carousel_content">
+
 	<h1><?php echo h($gallery['Gallery']['title']); ?></h1>
 
-	<?php echo h($gallery['Gallery']['body']); ?>
+	<h4><?php echo h($gallery['Gallery']['body']); ?></h4>
 
-
+<div class="carousel_content">
 <div id="slider" class="flexslider">
 <ul class="slides">
 
@@ -21,7 +21,9 @@
 
 </ul>
 </div>
+</div>
 
+<div class="carousel_content2">
 <div id="carousel" class="flexslider">
 <ul class="slides">
 

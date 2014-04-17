@@ -30,6 +30,7 @@ App::uses('AppController', 'Controller');
  */
 class PagesController extends AppController {
 
+	public $name = 'Pages';
 /**
  * This controller does not use a model
  *
@@ -76,6 +77,31 @@ class PagesController extends AppController {
 	}
 
 	public function services() {
+
+	}
+	public function aboutus() {
 		
+	}
+	public function contacts() {
+
+		if (!empty($this->request->data)) { // form posted
+		    /* load CakePHP Email component */
+		    App::uses('CakeEmail', 'Network/Email');
+
+		    /* instantiate CakeEmail class */
+		    $Email = new CakeEmail();
+		    
+		    $Email->config('gmail');  
+	      	/* pass user input to function */
+		    $Email->from(array($this->request->data['Page']['from_email'] => $this->request->data['Page']['from_name']));
+		    $Email->to('joaofernandes30710@gmail.com');
+		    $Email->subject($this->request->data['Page']['subject']);
+		    $Email->send($this->request->data['Page']['message']);
+		      
+		    $this->Session->setFlash('Email sent.');
+    	}
+    
+    /* render home.ctp instead of display.ctp */
+    /* $this->render('contacts'); */
 	}
 }
