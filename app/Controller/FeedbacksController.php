@@ -108,7 +108,6 @@ class FeedbacksController extends AppController {
             $this->Feedback->create();
             /* if ($this->MathCaptcha->validate($this->request->data['Feedback']['captcha'])) { */
 	            if ($this->Feedback->save($this->request->data)) {
-	            	$this->Session->setFlash(__('Captcha code validated successfully', 'flash_good'));
 	                $this->Session->setFlash(__('Your Feedback has been saved.'));
 	                return $this->redirect(array('action' => 'customer_index'));
 	            }

@@ -54,6 +54,7 @@ class AppController extends Controller {
 	    $this->Auth->allow(array('controller' => 'feedbacks', 'action' => 'display', 'customer_index'));
 	    $this->Auth->allow(array('controller' => 'feedbacks', 'action' => 'display', 'customer_add'));
 	    $this->Auth->allow(array('controller' => 'feedbacks', 'action' => 'display', 'customer_view'));
+	    $this->Auth->allow(array('controller' => 'feedbacks', 'action' => 'display', 'captcha'));
 	}
  
 	public function isAuthorized($user) {

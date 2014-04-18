@@ -19,6 +19,7 @@
  */
 
 App::uses('AppController', 'Controller');
+App::uses('CakeEmail', 'Network/Email');
 
 /**
  * Static content controller
@@ -86,7 +87,7 @@ class PagesController extends AppController {
 
 		if (!empty($this->request->data)) { // form posted
 		    /* load CakePHP Email component */
-		    App::uses('CakeEmail', 'Network/Email');
+		    
 
 		    /* instantiate CakeEmail class */
 		    $Email = new CakeEmail();
