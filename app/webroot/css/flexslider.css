@@ -97,5 +97,5 @@ html[xmlns] .slides {display: block;}
   .flex-direction-nav .flex-prev { opacity: 1; left: 10px;}
   .flex-direction-nav .flex-next { opacity: 1; right: 10px;}
   .carousel_content {width: 80%; margin: 0 auto;}
-.carousel_content2 {width: 80%; margin: 0 auto;}
+  .carousel_content2 {width: 80%; margin: 0 auto;}
 }

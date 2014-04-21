@@ -399,6 +399,8 @@ a, button {
 	.no-touch .nav li:focus i {
 		border: 4px solid rgba(255,255,255,0.1);
 	}
+
+	.scroll_to_menu_div {display: none;}
 	
 }
 
@@ -412,6 +414,7 @@ a, button {
 	.nav li .icon + span {
 		font-size: 0.9em;
 	}
+	.scroll_to_menu_div {display: none;}
 }
 
 /* Styling the toggle menu link and hiding it */
@@ -523,5 +526,10 @@ a, button {
 	.touch .nav a {
 		padding: 0.8em;
 	}
+
+	.shadow {margin-top:18%; width: 30%;}
+
+	body {background:#726658 url(../img/john_handy_background_img.png) 50% 0% no-repeat; background-size: 65%;}
+	.scroll_to_menu_div {display: none;}
 }
 

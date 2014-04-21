@@ -46,9 +46,9 @@ class AppController extends Controller {
 	// only allow the login controllers only
 	public function beforeFilter() {
 	    $this->Auth->allow('login','display');
-	    $this->Auth->allow(array('controller' => 'pages', 'action' => 'display', 'services'));
 	    $this->Auth->allow(array('controller' => 'pages', 'action' => 'display', 'aboutus'));
 	    $this->Auth->allow(array('controller' => 'pages', 'action' => 'display', 'contacts'));
+	    $this->Auth->allow(array('controller' => 'galleries', 'action' => 'display', 'customer_service'));
 	    $this->Auth->allow(array('controller' => 'galleries', 'action' => 'display', 'customer_index'));
 	    $this->Auth->allow(array('controller' => 'galleries', 'action' => 'display', 'customer_view'));
 	    $this->Auth->allow(array('controller' => 'feedbacks', 'action' => 'display', 'customer_index'));

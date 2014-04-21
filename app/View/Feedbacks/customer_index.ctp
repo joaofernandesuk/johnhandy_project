@@ -2,7 +2,7 @@
 <div class="container">
 
 	<div class="header_icon feedbacks_icon"></div>
-    <legend><h1><?php echo __('Give Us Your Feedback'); ?></h1></legend>
+    <legend><h1><?php echo __('Your Feedback'); ?></h1></legend>
 	<h5><?php echo __("Here you can tell us your thoughts about our company and about your experience with us. Don't hesitate to express yourself. Your opinion counts, and it's very important to the proper functioning of our company. "); ?></h5><p>
     
     <div class="feedback_action">
@@ -10,7 +10,7 @@
     	<?php echo $this->Form->create('Feedback', array('type' => 'file'));?>
 
 		
-    	
+
 		<?php 
 		echo $this->Form->input('name', array ('class' => 'feedback_input'));
 		echo $this->Form->input('email', array ('class' => 'feedback_input'));
@@ -43,7 +43,7 @@
             <div class="feedback_right">
             	<span style="font-size: 70px; position: absolute; margin-left: -30px">``</span>
             	<span style="font-weight: bold;"><?php echo substr($feedback['Feedback']['body'],0,70); ?>...</span><p>
-            	<span style="text-decoration: underline; float: right;"><?php echo $this->Html->link('Read More', array('controller' => 'feedbacks', 'action' => 'customer_view', $feedback['Feedback']['id'])); ?></span>
+            	<span class="read_more"><?php echo $this->Html->link('Read More', array('controller' => 'feedbacks', 'action' => 'customer_view', $feedback['Feedback']['id'])); ?></span>
             </div>
         </div>
 

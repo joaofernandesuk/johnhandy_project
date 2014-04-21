@@ -27,7 +27,7 @@
 			<?php echo $this->Html->image('phone_pic.png', array('class' => 'icons')); ?>
 			<div class="icons_text">
 				<h5><?php echo __("Phone Number:"); ?></h5>
-				<h5><?php echo __("44 (0) 07957 986 205"); ?></h5>
+				<h5 style="text-align: left; width: 200px;"><?php echo __("44 (0) 07957 986 205"); ?></h5>
 			</div>
 		</div>
 
@@ -35,7 +35,7 @@
 			<?php echo $this->Html->image('visit_pic.png', array('class' => 'icons')); ?>
 			<div class="icons_text">
 				<h5><?php echo __("We are based in:"); ?></h5>
-				<h5><?php echo __("South Oxhey, Watford"); ?></h5>
+				<h5 style="text-align: left; width: 200px;"><?php echo __("South Oxhey, Watford"); ?></h5>
 			</div>
 			<iframe src="https://www.google.com/maps/embed?pb=!1m23!1m8!1m3!1d9908.07156952869!2d-0.384143!3d51.6228814!3m2!1i1024!2i768!4f13.1!4m12!1i0!3e6!4m3!3m2!1d51.623680699999994!2d-0.3627282!4m5!1s0x48766b3109222ad7%3A0x2934fe3829df9941!2sSouth+Oxhey%2C+Watford%2C+Hertfordshire+WD19%2C+UK!3m2!1d51.622882!2d-0.38414299999999996!5e0!3m2!1sen!2s!4v1397761788726" width="100%" height="100%" frameborder="0" style="border:0">
 			</iframe>
