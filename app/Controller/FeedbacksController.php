@@ -89,19 +89,6 @@ class FeedbacksController extends AppController {
 
 
     public function customer_index() { 
-    	$this->set('feedbacks', $this->Feedback->find('all'));
-        $this->paginate = array(
-            'limit' => 5,
-            'order' => array('Feedback.created' => 'desc' )
-        );
-        $this->set('feedbacks', $this->paginate());
-    }
-
-    public function customer_add() { 
-
-    	/* $this->set('captcha', $this->MathCaptcha->getCaptcha()); */
-
-
     	if ($this->request->is('post')) {
     		$this->Feedback->setCaptcha($this->Captcha->getCode());
     		$this->Feedback->set($this->data);
@@ -111,12 +98,15 @@ class FeedbacksController extends AppController {
 	                $this->Session->setFlash(__('Your Feedback has been saved.'));
 	                return $this->redirect(array('action' => 'customer_index'));
 	            }
-           		$this->Session->setFlash(__('Unable to add your Feedback.'));
-           	
-           	/* } else {
-        		$this->Session->setFlash('The result of the calculation was incorrect. Please, try again.');
-      		} */
+           	$this->Session->setFlash(__('Unable to add your Feedback.'));
         }
+
+    	$this->set('feedbacks', $this->Feedback->find('all'));
+        $this->paginate = array(
+            'limit' => 3,
+            'order' => array('Feedback.created' => 'desc' )
+        );
+        $this->set('feedbacks', $this->paginate());
     }
 
     public function customer_view($id) { 

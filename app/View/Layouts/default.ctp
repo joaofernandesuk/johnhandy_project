@@ -51,7 +51,7 @@ $cakeVersion = __d('cake_dev', 'John Handy 2013/2014 ® - All Rights Reserved')
 </head>
 <body>
 <?php echo $this->Html->image('john_handy_background_img_02.png', array('class' => 'shadow')); ?>
-<div class="text_intro">Welcome to JOHN HANDY Web Page<br \>The Best Service with The Best Quality For Your House</div>
+<div class="text_intro">Welcome to JOHN HANDY Web Page.<br \>Your Home, Our Priority!<br \>The Best Service with The Best Quality For Your House!<br \>Find Below Our Services.</div>
 <div class="scroll_to_menu_div"><?php echo $this->Html->image('john_handy_arrow_intro.png', array('class' => 'scroll_to_menu')); ?></div>
 	<div id="container">
 		<div id="header">
@@ -59,12 +59,13 @@ $cakeVersion = __d('cake_dev', 'John Handy 2013/2014 ® - All Rights Reserved')
 				<nav id="menu" class="nav">					
 					<ul>
 						<li>
-							<a>
-								<span class="icon" style="cursor: pointer;">
-									<i aria-hidden="true" class="back_to_top icon-home"></i>
+							<?php echo $this->Html->link('
+							<span class="icon"> 
+									<i aria-hidden="true" class="icon-home"></i>
 								</span>
-								<span>Home</span>
-							</a>
+								<span>Home</span>',
+							 '/#menu', array('escape' => false, 'class' => 'stay_in_menu')); 
+						?> 
 						</li>
 						<li>
 						<?php echo $this->Html->link('
@@ -108,7 +109,7 @@ $cakeVersion = __d('cake_dev', 'John Handy 2013/2014 ® - All Rights Reserved')
 									<i aria-hidden="true" class="icon-blog"></i>
 								</span>
 								<span>Feedback</span>',
-							 '/feedback/add#menu', array('escape' => false, 'class' => 'stay_in_menu')); 
+							 '/feedback/#menu', array('escape' => false, 'class' => 'stay_in_menu')); 
 						?> 
 						</li>
 					</ul>

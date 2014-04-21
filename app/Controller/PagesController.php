@@ -77,9 +77,6 @@ class PagesController extends AppController {
 		}
 	}
 
-	public function services() {
-
-	}
 	public function aboutus() {
 		
 	}

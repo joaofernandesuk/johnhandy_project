@@ -131,7 +131,9 @@ class GalleriesController extends AppController {
         $photos = $this->Gallery->Photo->find('all');
         $this->set(compact('photos'));
     }
-
+    public function customer_service() {
+        $this->set('galleries', $this->Gallery->find('all'));
+    }
 
 }
 ?>

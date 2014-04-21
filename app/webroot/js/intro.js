@@ -51,14 +51,16 @@ $(document).ready(function(){
 
 	$(".scroll_to_menu").click(function(){
  		event.preventDefault();
- 		$(".text_intro").animate({right: '-100%'}, 500);
+    $("html, body").animate({scrollTop:530});
+
+ 		/* $(".text_intro").animate({right: '-100%'}, 500);
  		$(".scroll_to_menu").animate({right: '-100%'}, 500);
  		$("body").animate({backgroundSize:'20%'},"slow");
  		$("body").animate({backgroundPositionX: '5%', backgroundPositionY: '1%'} ,1000);
 	 	$(".shadow").animate({width: '0%'});
 	 	$("html").addClass('shadowclass');
 	 	$("#container").animate({marginTop:'-44%'},800);
-	 	$("html, body").animate({scrollTop:0});
+	 	$("html, body").animate({scrollTop:0}); */
 	});
 
 	/* $(".stay_in_menu").click(function(){

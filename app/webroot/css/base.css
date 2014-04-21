@@ -52,8 +52,8 @@
 /* #Basic Styles
 ================================================== */
 body {
-	background:#726658 url(../img/john_handy_background_img.png) 50% 3% no-repeat;
- 	background-size: 50%;
+	background:#726658 url(../img/john_handy_background_img.png) 50% 0% no-repeat;
+ 	background-size: 45%;
 	font: 14px/21px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	color: #444;
 	-webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
@@ -129,29 +129,28 @@ body {
     animation: swim 1s linear 1s infinite;
 }
 
-.text_intro {position: relative;font-size: 20px; margin: 2% auto 31.5%; width: 50%; text-align: center; background: rgba(255,255,255,0);}
+.text_intro {position: relative;font-size: 20px; font-weight: bold; color:rgb(241,233,211); margin: 2% auto; width: 96%; text-align: center; background: rgba(255,255,255,0.1); padding: 2%;}
 
- #container {margin-top: -11%;}
+ #container {margin-top: 0%;}
 
  #services {
  	padding-top: 20px;
  	width: 100%;
  	height: 100%;
- 	background:url(../img/lupa.png) 100% 0% no-repeat,url(../img/tool.png) 0% 0% no-repeat, #FFF url(../img/diamonds_background.png) 0% 0% repeat;
- 	background-attachment: scroll, scroll, fixed; 
- 	background-size: 50%, 50%, 10%;
- 	-moz-animation: search 5s linear 0s infinite;
-    -webkit-animation: search 5s linear 0s infinite;
-    animation: search 5s linear 0s infinite;
+ 	background:#FFF;
  }
+
   #contacts {
  	padding-top: 20px;
  	width: 100%;
  	height: 100%;
- 	background:#FFF url(../img/diamonds_background.png) 0% 0% repeat;
+ 	background:#FFF;
  	background-attachment:fixed; 
  	background-size:10%;
  }
+
+ #aboutus {padding: 20px 0; background: #FFF; width: 100%; height: 100%;}
+
 .email_content {width: 50%; position: relative; display: inline-block; float: left;}
 .telefone_content { width: 40%; height: 100px; float: right;}
 .map_location { width: 40%; height: 300px; float: right;}
@@ -160,11 +159,11 @@ body {
 
  #header {position: relative;background: transparent;}
 
-.scroll_to_menu_div {width: 100%; margin: -30% auto 15%; text-align: center;cursor:pointer;}
+.scroll_to_menu_div {width: 100%; margin: 2% -2% 2%; text-align: right;cursor:pointer;}
 .scroll_to_menu {
 		position: relative;
-		width: 5%;
-		padding: 1em;
+		width: 3%;
+		padding: 10px;
 		border-radius: 10%;
 		font-size: 1.8em;
 		box-shadow: 0 0 0 30px transparent;
@@ -217,7 +216,7 @@ body {
 		font: 13px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
 		font-weight: normal; }
 	h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { font-weight: inherit; }
-	h1 { font-size: 46px; line-height: 50px; margin-bottom: 14px;}
+	h1 { font-size: 46px; line-height: 80px; margin-bottom: 0px;}
 	h2 { font-size: 35px; line-height: 40px; margin-bottom: 10px; }
 	h3 { font-size: 28px; line-height: 34px; margin-bottom: 8px; }
 	h4 { font-size: 21px; line-height: 30px; margin-bottom: 4px; }
@@ -287,6 +286,23 @@ body {
 	}
 
 	.view_photo {width: 100%;}
+
+	.header_icon {margin-right: 20px; width: 60px; height: 60px; float:left; line-height: 60px; display: inline-block; text-align: center; font-family: 'icomoon'; color: #FFF; border-radius: 5px; font-size: 35px;}
+	
+	.services_icon {background: rgb(233, 147, 26);}
+	.services_icon:before {content: "\e004";}
+
+	.portfolio_icon {background: rgb(22, 145, 190);}
+	.portfolio_icon:before {content: "\e003";}
+
+	.aboutus_icon {background: rgb(22, 107, 162);}
+	.aboutus_icon:before {content: "\e000";}
+
+	.feedbacks_icon {background: rgb(21, 40, 54);}
+	.feedbacks_icon:before {content: "\e001";}
+
+	.contacts_icon {background: rgb(27, 54, 71);}
+	.contacts_icon:before {content: "\e005";}
 
 /* #Buttons
 ================================================== */
@@ -390,7 +406,8 @@ body {
 		font: 13px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
 		color: #777;
 		margin: 0;
-		width: 50%;
+		min-width: 95%;
+		max-width: 95%;
 		display: block;
 		margin-bottom: 20px;
 		background: #fff; }
@@ -420,12 +437,13 @@ body {
 		-webkit-box-shadow: 0 0 3px rgba(0,0,0,.2);
 		box-shadow:  0 0 3px rgba(0,0,0,.2); }
 	textarea {
-		min-height: 60px; width: 98%; max-height: 300px; height: 200px; max-width: 600px;}
+		min-width: 95%; max-height: 150px; max-width: 95%;}
 	label,
 	legend {
 		display: block;
 		font-weight: bold;
-		font-size: 13px;  }
+		font-size: 13px;
+		color: #FFF;  }
 	select {
 		width: 220px; }
 	input[type="checkbox"] {
@@ -435,6 +453,7 @@ body {
 		font-weight: normal;
 		font-size: 13px;
 		color: #444; }
+	.email_content label {color: #000;}
 
 /* #Misc
 ================================================== */
@@ -460,6 +479,8 @@ div.cont {
 
  .users {padding-top: 20px; background: #FFF; width: 100%; height: 100%;}
 
+ .feedback{padding: 20px 0; background: #FFF; width: 100%; height: 100%;}
+
 
 div.actions {
 	position: absolute;
@@ -475,6 +496,15 @@ div.actions h3 {
 	padding-top:0;
 	color:#777;
 }
+
+.gallery_01 {background: url(../img/background_01.png);background-attachment: fixed}
+.gallery_02 {background: url(../img/background_02.png); background-attachment: fixed}
+.gallery_03 {background: url(../img/diamonds_background.png); background-attachment: fixed}
+.gallery_04 {background: url(../img/background_04.png); background-size:15%; background-attachment: fixed}
+.gallery_05 {background: url(../img/background_05.png); background-attachment: fixed}
+.gallery_06 {background: url(../img/background_06.png); background-attachment: fixed}
+.gallery_07 {background:#e0e0e0 url(../img/background_07.png) 50% no-repeat; background-attachment: fixed; background-size: 70%}
+.gallery_08 {background: url(../img/background_08.png); background-attachment: fixed; background-size: 100%}
 
 /** Tables
 ================================================== */
@@ -522,7 +552,7 @@ table td.actions a {
 }
 .altrow, .zebra{background: #e0e0e0;}
 
-/** Paging **/
+/************************** Paging ******************************/
 .paging {
 	background:#fff;
 	color: #ccc;
@@ -534,11 +564,11 @@ table td.actions a {
 .paging a {
 	text-decoration: none;
 	padding: 5px 8px;
-	display: inline-block
+	display: inline-block;
+	border: 3px solid #ccc;
 }
 .paging > span {
 	display: inline-block;
-	border: 1px solid #ccc;
 	border-left: 0;
 }
 .paging > span:hover {
@@ -546,16 +576,15 @@ table td.actions a {
 	color: #000;
 }
 .paging .prev {
-	border-left: 1px solid #ccc;
 	-moz-border-radius: 4px 0 0 4px;
 	-webkit-border-radius: 4px 0 0 4px;
 	border-radius: 4px 0 0 4px;
 	cursor: pointer;
 }
 .paging .next {
-	-moz-border-radius: 0 4px 4px 0;
-	-webkit-border-radius: 0 4px 4px 0;
-	border-radius: 0 4px 4px 0;
+	-moz-border-radius: 0 0px 0px 0;
+	-webkit-border-radius: 0 0px 0px 0;
+	border-radius: 0 0px 0px 0;
 	cursor: pointer;
 }
 .paging .disabled {
@@ -706,12 +735,15 @@ img.captura:hover::before {
 
 .feedback_div {
 	width: 60%; 
-	margin-bottom: 20px; 
+	margin-bottom: -50px; 
 	background:url(../img/ballon_background.png) 30% 50% no-repeat;
 	background-size: 80%;
+	margin-top: -30px;
 	float: right;
 	padding: 15%;
 }
+
+.feedback_div:nth-child(3n+3) {margin-bottom: 10px;}
 
 .feedback_div:nth-child(odd) {
 	float: left; 
@@ -719,6 +751,13 @@ img.captura:hover::before {
 	background-size: 80%;
 }
 
+.feedback_left {font-size: 10px; overflow:hidden; float: left; width: 40%; max-height:100px; margin-top: 0%; margin-left: -5px; position: relative; display: inline-block; text-align: left; font-weight: bold;}
+
+.feedback_right {width:48%; font-size: 12px; float:right; margin-right:6%; margin-top:0%; overflow: hidden;}
+
+.feedback_action {width:30%; background-color:rgb(21, 40, 54); background-size: 100% ; padding: 3%; border:5px solid rgb(9, 18, 25); position: relative; display: inline-block; float: left;}
+
+.feedback_cont {width:62%; padding-left: 0; padding-right: 0; position: relative; float: right;}
 
 
 @media only screen and (min-width: 800px) and (max-width: 1085px) {

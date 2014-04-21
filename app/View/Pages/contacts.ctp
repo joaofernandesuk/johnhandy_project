@@ -1,5 +1,7 @@
 <div id="contacts">
 	<div class="container">
+
+	<div class="header_icon contacts_icon"></div>
     <legend><h1><?php echo __('Contacts'); ?></h1></legend>
     <h5><?php echo __("If you have any doubt or any issues that you wan't to solve it with us, just contact us. Give us a call to discuss whatever you wan't, or just send us an email. You can send trough our mail sender. Quick and easy :)"); ?></h5><p>
 
@@ -7,18 +9,16 @@
     	<div class="email_content">
 	    	<?php echo $this->Html->image('mail_pic.png', array('class' => 'icons')); ?>
 	    	<div class="icons_text">
-				<h5><?php echo __("Send us a e-Mail:"); ?></h5>
+				<h5><?php echo __("Send us an e-Mail:"); ?></h5>
 				<h5><?php echo __("(john@johnhandy.co.uk)"); ?></h5>
 			</div>
 			<?php
 				echo $this->Session->flash();
-
 				echo $this->Form->create('Page');
 				echo $this->Form->input('from_email');
 				echo $this->Form->input('from_name');
 				echo $this->Form->input('subject');
-				echo $this->Form->input('message', array('rows' => '5'));
-
+				echo $this->Form->input('message', array('rows' => '10'));
 				echo $this->Form->end('Send e-Mail');
 			?>
 		</div>
