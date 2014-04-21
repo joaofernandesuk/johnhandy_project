@@ -93,9 +93,14 @@ html[xmlns] .slides {display: block;}
 .flex-control-thumbs img:hover {opacity: 1;}
 .flex-control-thumbs .flex-active {opacity: 1; cursor: default;}
 
-@media screen and (max-width: 860px) {
+@media screen and (min-width: 767px) and (max-width: 959px) {
   .flex-direction-nav .flex-prev { opacity: 1; left: 10px;}
   .flex-direction-nav .flex-next { opacity: 1; right: 10px;}
   .carousel_content {width: 80%; margin: 0 auto;}
   .carousel_content2 {width: 80%; margin: 0 auto;}
+}
+
+@media screen and (max-width: 767px) {
+  .carousel_content {width: 100%; margin: 0 auto;}
+  .carousel_content2 {width: 100%; margin: 0 auto;}
 }
